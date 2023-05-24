@@ -1,10 +1,10 @@
-package com.gumisoqinae.harukaproject;
+package com.gumisoqinae.haruka;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HarukaProjectApplicationTests {
+class HarukaBotApplicationTests {
 
 	@Test
 	void contextLoads() {

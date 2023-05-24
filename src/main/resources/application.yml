@@ -1,0 +1,35 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  #    show-sql: true
+  datasource:
+    url: jdbc:mysql://172.18.11.236:3306/db_haruka_test
+    username:
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  bot:
+    plugin-list:
+      # [BotPlugin]??[????&????]??
+      - com.gumisoqinae.haruka.plugins.BotPlugin_Log # ????
+      # [PrivatePlugin]??[????]??
+
+      # [GroupPlugin]??[????]??
+      - com.gumisoqinae.haruka.plugins.GroupPlugin_RecordTest
+
+
+server:
+  # lorca launcher use this port to connect bot , DO NOT CHANGE IT !
+  port: 8081
+
+logging:
+  file:
+    name: logs/haruka-runtime.log
+
+
+
+
+
+

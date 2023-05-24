@@ -1,13 +1,13 @@
-package com.gumisoqinae.harukaproject;
+package com.gumisoqinae.haruka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HarukaProjectApplication {
+public class HarukaBotApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HarukaProjectApplication.class, args);
+		SpringApplication.run(HarukaBotApplication.class, args);
 	}
 
 }
