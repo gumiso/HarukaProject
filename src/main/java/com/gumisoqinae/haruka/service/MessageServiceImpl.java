@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class MessageServiceImpl implements IMessageService{
 
+//    String rawMessageLimited;
+
     private PrivateMessageRepository privateMessageRepository;
     private GroupMessageRepository groupMessageRepository;
 
@@ -30,12 +32,24 @@ public class MessageServiceImpl implements IMessageService{
     @Override
     public void savePrivateMessage(@NotNull OnebotEvent.PrivateMessageEvent event) {
 
+//        rawMessageLimited = "";
+        if(event.getRawMessage().length() > 250) {
+            log.warn("侦测到PrivateMessage - rawMessage原始数据长度超出可存储范围");
+//            rawMessageLimited = event.getRawMessage().substring(0,249);
+//            rawMessageLimited = rawMessageLimited + "...";
+        }
         privateMessageRepository.save(new PrivateMessage(event.getTime(), event.getMessageType(), event.getUserId(), event.getSender().getNickname(), event.getRawMessage()));
 
     }
 
     @Override
     public void saveGroupMessage(@NotNull OnebotEvent.GroupMessageEvent event) {
+//        rawMessageLimited = "";
+        if(event.getRawMessage().length() > 250) {
+            log.warn("侦测到GroupMessage - rawMessage原始数据长度超出可存储范围");
+//            rawMessageLimited = event.getRawMessage().substring(0,249);
+//            rawMessageLimited = rawMessageLimited + "...";
+        }
         groupMessageRepository.save(new GroupMessage(event.getTime(), event.getMessageType(), event.getGroupId(), event.getUserId(), event.getSender().getNickname(), event.getRawMessage()));
     }
 }

@@ -29,6 +29,12 @@ public class PrivateMessage {
     @Column(name = "rawMessage")
     private String rawMessage;
 
+    @Column(name = "textPart")
+    private String textPart;
+
+    @Column(name = "imagePart")
+    private String imagePart;
+
     public String getUuid() {
         return uuid;
     }
@@ -75,6 +81,22 @@ public class PrivateMessage {
 
     public void setRawMessage(String rawMessage) {
         this.rawMessage = rawMessage;
+    }
+
+    public String getTextPart() {
+        return textPart;
+    }
+
+    public void setTextPart(String textPart) {
+        this.textPart = textPart;
+    }
+
+    public String getImagePart() {
+        return imagePart;
+    }
+
+    public void setImagePart(String imagePart) {
+        this.imagePart = imagePart;
     }
 
     public PrivateMessage() {
